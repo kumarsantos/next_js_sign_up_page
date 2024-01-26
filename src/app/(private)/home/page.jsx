@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/crud");
+  const res = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/crud`);
   if (!res.ok) {
     throw new Error("Something went wrong");
   }

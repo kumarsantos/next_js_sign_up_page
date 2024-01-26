@@ -43,7 +43,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-      const res = await fetch("/api/crud", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/crud`, {
         method: userId ? "PUT" : "POST",
         body: JSON.stringify(data),
       });
@@ -59,7 +59,7 @@ const Signup = () => {
   useEffect(() => {
     const getUserData = async () => {
       try {
-        const res = await fetch(`/api/crud?userId=${userId}`);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_DOMAIN}/api/crud?userId=${userId}`);
         const { data } = await res.json();
         setUser(data);
       } catch (error) {
@@ -94,7 +94,7 @@ const Signup = () => {
           </div>
         </div>
         <p className=" tracking-wider text-center">
-          I've not seen anything as affordable and easy to use as Zoho Books.
+          I have not seen anything as affordable and easy to use as Zoho Books.
           The reports are simple to run and can be scheduled to generate
           automatically. As a small business owner, I no longer worry about
           ageing receivables with the automatic payment reminders in Zoho Books.
