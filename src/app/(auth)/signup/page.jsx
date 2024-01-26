@@ -73,7 +73,6 @@ const Signup = () => {
   }, [userId]);
 
   return (
-    <Suspense fallback={<p>Hello</p>}>
       <div className="flex relative h-full ">
         <section className=" relative bg-blue-100 px-14 lg:max-w-[40%] md:max-w-[40%] hidden md:inline-block lg:inline-block w-full lg:min-h-screen md:min-h-screen space-y-8">
           <div className="flex items-center md:pl-6 lg:pl-6 space-x-1 w-full py-2 border-b border-slate-200 absolute top-0 left-0">
@@ -206,7 +205,6 @@ const Signup = () => {
           </div>
         </section>
       </div>
-    </Suspense>
   );
 };
 
