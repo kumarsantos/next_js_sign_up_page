@@ -15,13 +15,16 @@ export default function TableGrid({ data }) {
   const router = useRouter();
 
   const handleEdit = (id) => {
-    router.push(`/signup?userId=${id}`);
+    router.push(`${process.env.NEXT_PUBLIC_DOMAIN}/signup?userId=${id}`);
   };
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/crud?id=${id}`, {
-        method: "DELETE",
-      });
+      const res = await fetch(
+        `${process.env.NEXT_PUBLIC_DOMAIN}/api/crud?id=${id}`,
+        {
+          method: "DELETE",
+        }
+      );
       await res.json();
       router.refresh();
     } catch (error) {
